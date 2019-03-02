@@ -1,7 +1,6 @@
 document.getElementById('taskInputForm').addEventListener('submit', saveTask);
 document.getElementById('taskDueDateInput').valueAsDate = new Date();
 
-
 var database;
 
 function setup() {
