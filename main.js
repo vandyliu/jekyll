@@ -1,12 +1,20 @@
 document.getElementById('taskInputForm').addEventListener('submit', saveTask);
 document.getElementById('taskDueDateInput').valueAsDate = new Date();
+window.addEventListener('load', function() {initApp()});
 
 var database;
+var uid;
 
 function setup() {
   setupFirebase();
-  var ref = database.ref('tasks').orderByChild('time');
-  ref.on('value', gotTasks, errTasks);
+  logIn();	
+  //console.log(uid);
+  //var ref = database.ref(uid+'/tasks');
+  //ref.on('value', gotTasks, errTasks);
+}
+
+function loggedinsetup() {
+	setupFirebase();
 }
 
 function getDifficulty(number) {
@@ -75,6 +83,61 @@ function setupFirebase() {
   database = firebase.database();
 }
 
+function logIn() {
+	var uiConfig = {
+        signInSuccessUrl: 'loggedin.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+          window.location.assign('<your-privacy-policy-url>');
+        }
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+}
+
+function logout() {
+	firebase.auth().signOut();
+}
+
+function initApp() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            uid = user.uid;
+            var phoneNumber = user.phoneNumber;
+            var providerData = user.providerData;
+            user.getIdToken().then(function(accessToken) {
+              document.getElementById('sign-in-msg').textContent = 'Welcome '+user.displayName;
+              document.getElementById('sign-in').textContent = 'Sign out';
+              var ref = database.ref('users/'+uid+'/tasks');
+  			  ref.on('value', gotTasks, errTasks);
+            }
+            );
+          } else {
+            // User is signed out.
+            window.location.href = '/tasks';
+          }
+        }, function(error) {
+          console.log(error);
+        });
+      };
+
+
 function fieldMissingPopUp() {
   //var popup = document.getElementById("myPopup");
   //popup.classList.toggle("show");
@@ -94,7 +157,7 @@ function saveTask(e) {
   	fieldMissingPopUp();
   } 
   else {
-  	var ref = database.ref('tasks');
+  	var ref = database.ref('users/'+uid+'/tasks');
 	var data = {
 	  	desc: desc,
 	  	difficulty: difficulty,
@@ -108,7 +171,7 @@ function saveTask(e) {
 }
 
 function deleteTask(id) {
-	var ref = database.ref('tasks/'+id);
+	var ref = database.ref('users/'+uid+'/tasks/'+id);
   	console.log(ref);
     ref.remove().then(function() {
     	console.log(id + "Removed");

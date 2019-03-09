@@ -7,68 +7,53 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->    
     <title>Priority To Do Tracker</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    
 
   </head>
   <body onload="setup()">
-    <div class="container">
-      <h1>Task Tracker <small>in JavaScript</small></h1>
-      <div class="jumbotron">
-        <h3 class="text-center">Add New Task</h3>
-        <form id="taskInputForm">
-          <div class="form-group">
-            <label for="taskDescInput">Description</label>
-            <input type="text" class="form-control" id="taskDescInput" placeholder="Describe the task ..." > 
-          </div>
-          <div class="form-group">
-            <label for="taskDifficultyInput">Difficulty</label>
-             <select class="form-control" id="taskDifficultyInput">
-              <option value="3">Easy</option>
-              <option value="2">Moderate</option>
-              <option value="1">Difficult</option>
-            </select> 
-          </div>
-          <div class="form-group">
-            <label for="taskTimeInput">Time</label>
-              <input type="number" min="0.5" step="0.5" class="form-control" id="taskTimeInput" placeholder="Amount of hours to complete">
-            </select> 
-          </div>
-          <div class="form-group">
-            <label for="taskDueDateInput">Date Due</label>
-            <input type="date" class="form-control" id="taskDueDateInput" placeholder="Need to be done by...">
-          </div>
+    
+    <div id="sign-in-status"></div>
+    <div id="sign-in"></div>
+    <div class = "container">
+        <h1>Task Tracker <small>in JavaScript</small></h1>
+        <h3 class = "text-center"> The first task is to sign in!</h3>
+        <div id="firebaseui-auth-container"></div>
 
-          <div class="popup" onclick="saveTask">
-            <button class="btn btn-primary">Add Task</button>
-            <!--<span class="popuptext" id="myPopup">You missed a field!</span>-->
-            <p class="popuptext"></p>
+        <h2>Pictures of the web app</h2>
+        <div class="wrapper">
+          <div class="scrolls">
+              <img src="/images/4.png"/>
+              <img src="/images/5.png"/>
           </div>
-        </form>
+        </div>
+      
+        <h4>Things you can do with this app right now:</h4>
+        <ul>
+          <li>Add things you need to do in a simple place!</li>
+          <li>Have access to the tasks anywhere you go with Google login!</li>
+          <li>Remove tasks with the click of a button</li>
+        </ul>
+        <h4>Things that are coming:</h4>
+        <ul>
+          <li>Sort by a specific priority (ie. time, difficulty, earliest due date)........... one of the first things that I wanted to do. IT WILL BE DONE!!!</li>
+          <li>Add functionality to sync with Google calendar </li>
+          <li>Organizing tasks into user-created groups</li>
+          <li>Keep a history of completed/deleted tasks</li>
+        </ul>
 
-      </div>
-	  <div class="col-lg-12">
-	  	  <h1>Task List <small id="priorityText">Priority: soonest</small></h1>
-        <div id="priorityBox">
-	  	  	<div></div>
-	  	  </div>
-        <button class="btn pull-right" class="btn btn-secondary" type="priorityClick" onclick = "soonest()">Soonest</button>
-        <button class="btn pull-right" class="btn btn-secondary" type="priorityClick" onclick = "quickest()">Quickest</button>
-        <button class="btn pull-right" class="btn btn-secondary" type="priorityClick" onclick = "easiest()">Easiest</button>
-	  	  <!--<button class="btn pull-right" type="testButton" onclick = "fucntion()">Test Whatever</button>-->
-	  </div>
-
-	  <div class="col-lg-12">
-	    <div id="tasksList">
-	    </div>
-	  </div>
-      <div class="footer">
-        <p></p>
-      </div>
+        
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="http://chancejs.com/chance.min.js"></script>
+
   </body>
 </html>
