@@ -6,10 +6,11 @@ permalink: /about/
 
 ![Me (2 years ago though)](/assets/author.png)
 
-Hello there! My name is Vandy Liu, and I'm a second year computer science student at UBC. 
+Hello there! My name is Vandy Liu, and I'm a third year computer science student at UBC. 
 
-Currently, I am a teaching assistant for CPSC 121 and am trying to start some personal projects. 
+Currently, I'm an AFE SDE Intern at Amazon Vancouver.
+Previously, I was a lead teaching assistant for CPSC 121. 
 
-My resume needs to be updated and cleaned up but if you want to take a look at it, there's a link at the top right. (It will be back soon!)
+My resume can be accessed on the top right.
 
 Outside of school, I like to watch the NBA (Go raptors!), play video games and play soccer.
