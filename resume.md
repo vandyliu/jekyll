@@ -3,4 +3,4 @@ layout: "page"
 title: Resume
 ---
 
-Coming soon!
+[Click here!](../Resume-06-19-2019.pdf)
