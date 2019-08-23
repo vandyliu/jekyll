@@ -36,3 +36,6 @@ I'm incredibly grateful for the opportunity given to me. I learned that I still 
 
 ![Laptop](/assets/laptop.jpg)
 *My laptop*
+
+![My niece](/assets/ashley.JPG)
+**Bonus:** *Cute picture of my niece repping Amazon* :heart_eyes:
