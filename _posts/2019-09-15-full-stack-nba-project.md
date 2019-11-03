@@ -8,6 +8,8 @@ categories: blog
 permalink: /:categories/:year/:month/:title
 ---
 
+[November 2, 2019 - UPDATED BLOG POST](../../../blog/2019/11/updating-my-nba-project)
+
 ![Website In Action](/assets/bsq.gif)
 
 [Click here to see it!](https://vandyliu.github.io/boxscorequick)
