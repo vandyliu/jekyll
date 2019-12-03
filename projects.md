@@ -19,6 +19,14 @@ For NBA fanatics, who want to watch interesting games or just get real-time box 
 
 Users can log in using their Google ID, and keep track of tasks that they have to complete. Give each task properties such as time it will take, difficulty and due date and sort through your tasks based on the property selected.
 
+### **Direction Message (DM) Us (Hackathon)**
+
+![dmus](/assets/dmus.gif)
+
+*Languages/Technologies: Python, Flask, Microsoft Azure, Twilio API, Google Maps API*
+
+A Flask app hosted on Azure that communicates through SMS messages to provide users with real-time transit information and directions, which is usually only available with data. Our focus was to help people that cannot afford data get access to transit information because everyone should know how to get home regardless of financial status.
+
 ### **Check Out Alexa skill (Hackathon)**
 
 *Languages/Technologies: Node.js, AWS Lambda, MongoDB*
