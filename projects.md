@@ -3,7 +3,7 @@ layout: "page"
 title: Projects
 ---
 
-### [**Box Score Quick**](vandyliu.github.io/boxscorequick)
+### [**Box Score Quick**](https://vandyliu.github.io/boxscorequick)
 ![bsq](/assets/bsqv2.gif)
 
 *Languages/Technologies: React, Python, Flask, MongoDB (previously)*
