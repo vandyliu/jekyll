@@ -17,7 +17,7 @@ title: Vandy Liu
 email: vandyliu@alumni.ubc.ca
 description: >- # this means to ignore newlines until "baseurl:"
   "A computer science student who enjoys doing stuff with computers and who needs to change this text in the future."
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://vandyliu.com/jekyll" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: vandy-liu
 github_username:  vandyliu
